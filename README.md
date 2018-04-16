@@ -82,3 +82,8 @@ The snake can only go up relative to other objects. But its absolution position 
 
 <!-- pick color here -->
 <!-- http://paletton.com/ -->
+
+# Bonus features
+
+- [ ] Add sound
+- [ ] Add difficulties selection
