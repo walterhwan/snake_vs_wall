@@ -78,6 +78,7 @@ The snake can only go up relative to other objects. But its absolution position 
 #### Day 4
 
 + make a fun gameplay experience
++ Score board
 
 <!-- pick color here -->
 <!-- http://paletton.com/ -->
