@@ -8,7 +8,6 @@ class Wall {
     this.strength = strength;
     this.width = length;
     this.height = length;
-    this.destroyed = false;
   }
 
   move() {
@@ -18,10 +17,21 @@ class Wall {
   draw(ctx) {
     if (this.destroyed) return null;
 
+    // rect
     const [x, y] = [this.x, this.y];
     const [width, height] = [this.width, this.height];
-    ctx.roundRect(x, y, width, height, 5, this.strength);
-    ctx.font = "30px Arial";
+
+    if (this.strength <= 5) {
+      ctx.fillStyle = 'green';
+    } else if (this.strength <= 10) {
+      ctx.fillStyle = 'orange';
+    } else {
+      ctx.fillStyle = 'red';
+    }
+    ctx.roundRect(x, y, width, height, 5);
+
+    // strength
+    ctx.font = "25px Arial";
     ctx.fillStyle = 'white';
     ctx.textBaseline="middle";
     ctx.textAlign="center";

@@ -1,12 +1,12 @@
 class ObjectX {
   constructor(props) {
     const {
-      x, y, length, speed
+      x, y, width, height, speed
     } = props;
     [this.x, this.y] = [x, y];
     this.speed = speed;
-    this.width = length;
-    this.height = length;
+    this.width = width;
+    this.height = height;
   }
 }
 

@@ -3,9 +3,11 @@ import * as Util from './until';
 import Input from './input';
 import Snake from './snake';
 import Wall from './wall';
+import Food from './food';
+// import
 
 CanvasRenderingContext2D.prototype
-.roundRect = function (x, y, w, h, rad, wallValue) {
+.roundRect = function (x, y, w, h, rad) {
   if (w < 2 * rad) rad = w / 2;
   if (h < 2 * rad) rad = h / 2;
   this.beginPath();
@@ -15,14 +17,6 @@ CanvasRenderingContext2D.prototype
   this.arcTo(x,     y + h, x,     y,     rad);
   this.arcTo(x,     y,     x + w, y,     rad);
   this.closePath();
-
-  if (wallValue <= 5) {
-    this.fillStyle = 'green';
-  } else if (wallValue <= 10) {
-    this.fillStyle = 'orange';
-  } else {
-    this.fillStyle = 'red';
-  }
 
   this.fill();
   return this;
@@ -37,35 +31,13 @@ class Game {
 
     this.input = new Input(document);
     this.canvasProps = {
-      width: 485,
+      width: 365,
       height: 600,
     };
     this.canvas.width = this.canvasProps.width;
     this.canvas.height = this.canvasProps.height;
 
-    // this.snake = new Snake(240, 500, 3, this.canvasProps);
-    const snakeProps = {
-      x: 240,
-      y: 500,
-      life: 5,
-      length: 12,
-      maxX: this.canvasProps.width,
-      input: this.input,
-    };
-
-    const startY = -80;
-    this.snake = new Snake(snakeProps);
-    this.walls = [];
-    for (const idx of _.range(6)) {
-      const wallProps = {
-        x: 5 + idx * 80,
-        y: startY,
-        length: 75,
-        strength: Math.floor(Math.random() * 12 + 1),
-        speed: 4
-      };
-      this.walls.push(new Wall(wallProps));
-    }
+    this.setup();
     // this.level = new Level(this.canvasProps);
     // this.hud = new HUD(this.player);
 
@@ -74,13 +46,53 @@ class Game {
     });
   }
 
-  // doesCollide(snake) {
-  //   this.walls.forEach(wall => {
-  //     if (Util.doesCollide(wall, snake)) return true;
-  //   });
-  //
-  //   return false;
-  // }
+  setup() {
+    this.input.rightKey = false;
+    this.input.leftKey = false;
+
+    const snakeProps = {
+      x: 150,
+      y: 500,
+      life: 5,
+      length: 17,
+      maxX: this.canvasProps.width,
+      input: this.input,
+    };
+    this.snake = new Snake(snakeProps);
+
+    // Walls
+    // const startY = -80;
+    const startY = 0;
+    this.walls = [];
+    for (const idx of _.range(6)) {
+      const wallProps = {
+        x: 5 + idx * 60,
+        y: startY,
+        length: 55,
+        strength: Math.floor(Math.random() * 12 + 1),
+        speed: 4
+      };
+      this.walls.push(new Wall(wallProps));
+    }
+
+    // Foods
+    const foodsStartY = 150;
+    this.foods = [];
+    const numFoods = 6;
+    const size = 10;
+    for (const idx of _.range(numFoods)) {
+      const foodProps = {
+        x: 30 + idx * 60,
+        y: foodsStartY,
+        size,
+        life: Math.floor(Math.random() * 12),
+        speed: 4
+      };
+
+      this.foods.push(new Food(foodProps));
+    }
+  }
+
 
   update() {
     this.ctx.clearRect(0, 0, this.canvasProps.width, this.canvasProps.height);
@@ -95,8 +107,18 @@ class Game {
         wall.destroyed = true;
         this.snake.life -= wall.strength;
       }
-      wall.move();
+      // wall.move();
       wall.draw(this.ctx);
+    });
+
+    // Walls
+    this.foods.forEach((food) => {
+      if (!food.destroyed && Util.doesCollide(food, this.snake)) {
+        food.destroyed = true;
+        this.snake.life += food.life;
+      }
+      // food.move();
+      food.draw(this.ctx);
     });
 
     // check collisions
@@ -109,11 +131,11 @@ class Game {
 
     if (this.snake.life <= 0) {
       alert('Game over');
-
-    } else {
-      window.requestAnimationFrame(() => { this.update(); });
+      this.setup();
     }
-
+    window.requestAnimationFrame(() => {
+      this.update();
+    });
   }
 }
 

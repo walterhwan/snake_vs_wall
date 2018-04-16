@@ -1,5 +1,6 @@
 import * as _ from 'lodash';
 import * as Util from './until';
+import ObjectX from './objectX';
 
 class Snake {
   constructor(props) {
@@ -33,7 +34,7 @@ class Snake {
   }
 
   draw(ctx) {
-    ctx.font = "10px Arial";
+    ctx.font = "15px Arial";
     ctx.fillStyle = 'white';
     // ctx.textBaseline="middle";
     // ctx.textAlign="center";
