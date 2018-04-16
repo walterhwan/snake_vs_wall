@@ -74,6 +74,7 @@ The snake can only go up relative to other objects. But its absolution position 
 
 + snake will decrease in length when hitting a wall
 + game over when length is 0
++ game will run faster and faster
 
 #### Day 4
 
@@ -86,4 +87,4 @@ The snake can only go up relative to other objects. But its absolution position 
 # Bonus features
 
 - [ ] Add sound
-- [ ] Add difficulties selection
+- [ ] Add difficulties selections

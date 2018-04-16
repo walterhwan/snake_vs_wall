@@ -1,0 +1,25 @@
+constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/input.js	/^  constructor(doc) {$/;"	function	line:2
+switch	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/input.js	/^      switch (e.keyCode) {$/;"	function	line:13
+switch	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/input.js	/^      switch (e.keyCode) {$/;"	function	line:34
+leftPressed	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/input.js	/^  leftPressed() {$/;"	function	line:55
+rightPressed	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/input.js	/^  rightPressed() {$/;"	function	line:59
+constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/wall.js	/^  constructor(props) {$/;"	function	line:2
+move	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/wall.js	/^  move() {$/;"	function	line:14
+draw	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/wall.js	/^  draw(ctx) {$/;"	function	line:18
+constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/snake.js	/^  constructor(props) {$/;"	function	line:5
+move	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/snake.js	/^  move() {$/;"	function	line:21
+draw	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/snake.js	/^  draw(ctx) {$/;"	function	line:35
+canvas	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^canvas {$/;"	function	line:5
+CanvasRenderingContext2D	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^import Wall from '.\/wall';$/;"	class	line:5
+CanvasRenderingContext2D.roundRect	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^.roundRect = function (x, y, w, h, rad, wallValue) {$/;"	method	line:8
+constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  constructor() {$/;"	function	line:32
+canvasProps.width	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    this.canvasProps = {$/;"	property	line:39
+canvasProps.height	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      width: 485,$/;"	property	line:40
+const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    const snakeProps = {$/;"	property	line:47
+const.y	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      x: 240,$/;"	property	line:48
+const.life	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      y: 500,$/;"	property	line:49
+const.length	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      life: 5,$/;"	property	line:50
+const.maxX	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      length: 12,$/;"	property	line:51
+const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const wallProps = {$/;"	property	line:60
+update	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  update() {$/;"	function	line:85
+constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/object.js	/^  constructor(props) {$/;"	function	line:2
