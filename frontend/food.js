@@ -24,20 +24,21 @@ class Food {
 
   draw(ctx) {
     if (this.destroyed) return null;
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, 2*Math.PI);
     ctx.fillStyle = 'blue';
-    ctx.fill();
+    ctx.roundRect(this.x, this.y, this.width, this.height, this.width);
+    // ctx.beginPath();
+    // ctx.arc(this.x, this.y, this.size, 0, 2*Math.PI);
+    // ctx.fill();
 
     // life
-    ctx.font = "15px Arial";
+    ctx.font = "10px Arcade";
     ctx.fillStyle = 'white';
-    ctx.textBaseline="middle";
-    ctx.textAlign="center";
+    // ctx.textBaseline="middle";
+    // ctx.textAlign="center";
     ctx.fillText(
       this.life,
-      this.x,
-      this.y
+      this.x + 11,
+      this.y + 11
     );
   }
 }

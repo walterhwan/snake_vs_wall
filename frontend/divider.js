@@ -3,9 +3,27 @@ class Divider {
     const {
       x, y, width, height, speed
     } = props;
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.speed = speed;
+  }
+
+  move() {
+    this.y += this.speed;
   }
 
   draw(ctx) {
-    ctx.roundRect
+    ctx.fillStyle = 'grey';
+    ctx.roundRect(
+      this.x,
+      this.y,
+      this.width,
+      this.height,
+      5
+    );
   }
 }
+
+export default Divider;

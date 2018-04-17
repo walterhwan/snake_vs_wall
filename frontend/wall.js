@@ -31,7 +31,7 @@ class Wall {
     ctx.roundRect(x, y, width, height, 5);
 
     // strength
-    ctx.font = "25px Arial";
+    ctx.font = "25px Arcade";
     ctx.fillStyle = 'white';
     ctx.textBaseline="middle";
     ctx.textAlign="center";

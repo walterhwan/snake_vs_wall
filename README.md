@@ -88,3 +88,4 @@ The snake can only go up relative to other objects. But its absolution position 
 
 - [ ] Add sound
 - [ ] Add difficulties selections
+- [ ] make it speed up as time goes on

@@ -1,6 +1,7 @@
 class Input {
   constructor(doc) {
     this.KEY_RT = 39; this.KEY_LT = 37; this.SPACE = 32;
+    this.ENTER = 13;
     this.KEY_A = 65; this.KEY_D = 68;
     this.KEY_UP = 38; this.KEY_DOWN = 40;
 
@@ -8,6 +9,7 @@ class Input {
     this.rightKey = false;
     this.upKey = false;
     this.downKey = false;
+    this.enterKey = false;
 
     doc.addEventListener('keydown', (e) => {
       switch (e.keyCode) {
@@ -24,6 +26,9 @@ class Input {
           break;
         case this.KEY_DOWN:
           this.downKey = true;
+          break;
+        case this.ENTER:
+          this.enterKey = true;
           break;
         default:
           console.log(e.keyCode);
@@ -45,6 +50,9 @@ class Input {
           break;
         case this.KEY_DOWN:
           this.downKey = false;
+          break;
+        case this.ENTER:
+          this.enterKey = false;
           break;
         default:
           console.log(e.keyCode);
