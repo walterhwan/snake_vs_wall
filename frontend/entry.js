@@ -5,6 +5,7 @@ import Snake from './snake';
 import Wall from './wall';
 import Food from './food';
 import Divider from './divider';
+import BlinkText from './blink_text';
 // import
 
 CanvasRenderingContext2D.prototype
@@ -27,9 +28,24 @@ class Game {
   constructor() {
     console.log("game loaded");
 
+    // Music
+    this.audio = document.getElementById('audio2');
+    document.getElementById('play-pause').onclick = () => {
+      if (this.audio.paused) {
+        this.audio.play();
+      } else {
+        this.audio.pause();
+      }
+    };
+    document.getElementById('stop').onclick = () => {
+      this.audio.pause();
+      this.audio.currentTime = 0;
+    };
+
     this.canvas = document.getElementById("canvas");
     this.ctx = this.canvas.getContext('2d');
     this.gameStart = false;
+    this.gameSpeed = 2;
 
     this.input = new Input(document);
     this.canvasProps = {
@@ -67,7 +83,16 @@ class Game {
     this.input.rightKey = false;
     this.input.leftKey = false;
 
-    const levelSpeed = 2;
+    const blinkTextProps = {
+      font: '14px Arcade',
+      fillStyle: 'grey',
+      text: 'Press Enter to Start',
+      x: this.canvasProps.width/2,
+      y: this.canvasProps.height/2,
+      interval: 800,
+    };
+    this.startText = new BlinkText(blinkTextProps);
+    this.startText.start(performance.now());
 
     // Walls
     const startY = -300;
@@ -79,7 +104,7 @@ class Game {
         y: startY,
         length: 55,
         strength: Math.floor(Math.random() * 12 + 1),
-        speed: levelSpeed
+        speed: this.gameSpeed
       };
       this.walls.push(new Wall(wallProps));
     }
@@ -96,7 +121,7 @@ class Game {
         y: foodsStartY,
         size,
         life: Math.abs(wallStrength + Math.floor(Math.random() * 7 - 3)),
-        speed: levelSpeed
+        speed: this.gameSpeed
       };
 
       this.foods.push(new Food(foodProps));
@@ -114,7 +139,7 @@ class Game {
         y: dividerStartY,
         width,
         height,
-        speed: levelSpeed
+        speed: this.gameSpeed
       };
       if (Math.floor(Math.random() * 2) === 0) {
         this.dividers.push(new Divider(dividerProps));
@@ -124,59 +149,78 @@ class Game {
 
 
   update() {
+    const width = this.canvasProps.width;
+    const height = this.canvasProps.height;
     this.ctx.clearRect(0, 0, this.canvasProps.width, this.canvasProps.height);
 
-    // Start button
-    this.ctx.font = "14px Arcade";
-    this.ctx.fillText("Press Enter to Start", 180, 100);
-
-    // if (this.gameStart = )
-
-    // Snake
-    this.snake.move(this.dividers);
-    this.snake.draw(this.ctx);
-
-    // Walls
-    this.walls.forEach((wall) => {
-      if (!wall.destroyed && Util.doesCollide(wall, this.snake)) {
-        wall.destroyed = true;
-        this.snake.life -= wall.strength;
-      }
-      // wall.move();
-      wall.draw(this.ctx);
-    });
-
-    // Foods
-    this.foods.forEach((food) => {
-      if (!food.destroyed && Util.doesCollide(food, this.snake)) {
-        food.destroyed = true;
-        this.snake.life += food.life;
-      }
-      // food.move();
-      food.draw(this.ctx);
-    });
-
-    // Dividers
-    this.dividers.forEach(divider => {
-      // divider.move();
-      divider.draw(this.ctx);
-    });
-
-    // check collisions
-    // this.level.collide(this.player);
-
-    //draw
-    // this.player.draw(this.ctx);
-    // this.level.draw(this.ctx);
-    // this.hud.draw(this.ctx);
-
-    if (this.snake.life <= 0) {
-      // alert('Game over');
-      this.setup();
-      this.setupSnake();
-    } else if (this.walls[0].y > this.canvasProps.height) {
-      this.setup();
+    if (this.input.spacePressed() && this.snake.life > 10 && this.speed > 2) {
+      this.gameSpeed -= 2;
+      this.snake.life -= 10;
     }
+
+    if (this.input.enterPressed()) {
+      this.gameStart = true;
+    }
+    // Start Menu
+    if (!this.gameStart) {
+      this.ctx.font = "40px Arcade";
+      this.ctx.fillStyle = "grey";
+      this.ctx.textAlign = "center";
+      this.ctx.fillText("Snake", width/2, 100);
+      this.ctx.fillText("VS", width/2, 100 + 60);
+      this.ctx.fillText("Wall", width/2, 100 + 120);
+
+      this.startText.draw(this.ctx);
+    } else {
+      // Snake
+      this.snake.move(this.dividers);
+      this.snake.draw(this.ctx);
+
+      // Walls
+      this.walls.forEach((wall) => {
+        if (!wall.destroyed && Util.doesCollide(wall, this.snake)) {
+          wall.destroyed = true;
+          this.snake.life -= wall.strength;
+        }
+        wall.move();
+        wall.draw(this.ctx);
+      });
+
+      // Foods
+      let oneFoodDestroyed = false;
+      this.foods.forEach((food) => {
+        if (!food.destroyed && Util.doesCollide(food, this.snake)) {
+          food.destroyed = true;
+          oneFoodDestroyed = true;
+          this.snake.life += food.life;
+        }
+        food.move();
+        food.draw(this.ctx);
+      });
+      if (oneFoodDestroyed) {this.foods = [];}
+
+      // Dividers
+      this.dividers.forEach(divider => {
+        divider.move();
+        divider.draw(this.ctx);
+      });
+
+      if (this.snake.life <= 0) {
+        // alert('Game over');
+        this.gameSpeed = 2;
+        this.gameStart = false;
+        this.setup();
+        this.setupSnake();
+      } else if (this.walls[0].y > this.canvasProps.height) {
+        this.setup();
+        if (this.gameSpeed > 6) {
+          this.gameSpeed += 0.5;
+        } else {
+          this.gameSpeed += 0.2;
+        }
+      }
+    }
+
     window.requestAnimationFrame(() => {
       this.update();
     });

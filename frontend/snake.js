@@ -40,8 +40,6 @@ class Snake {
         case 'bottom':
           const divCenter = divider.x + divider.width / 2;
           const snakeCenter = snake.x + snake.width / 2;
-          console.log(`divCenter: ${divCenter}`);
-          console.log(`snakeCenter: ${snakeCenter}`);
           if (divCenter > snakeCenter) {
             snake.x = divider.x - snake.width;
           } else {
@@ -64,8 +62,8 @@ class Snake {
   draw(ctx) {
     ctx.font = "15px Arcade";
     ctx.fillStyle = 'white';
-    // ctx.textBaseline="middle";
-    // ctx.textAlign="center";
+    ctx.textBaseline="middle";
+    ctx.textAlign="center";
     ctx.fillText(
       this.life,
       this.x + 30,

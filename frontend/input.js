@@ -30,6 +30,9 @@ class Input {
         case this.ENTER:
           this.enterKey = true;
           break;
+        case this.SPACE:
+          this.spaceKey = true;
+          break;
         default:
           console.log(e.keyCode);
       }
@@ -54,6 +57,9 @@ class Input {
         case this.ENTER:
           this.enterKey = false;
           break;
+        case this.SPACE:
+          this.spaceKey = false;
+          break;
         default:
           console.log(e.keyCode);
       }
@@ -64,8 +70,17 @@ class Input {
     return this.leftKey;
   }
 
+
   rightPressed() {
     return this.rightKey;
+  }
+
+  enterPressed() {
+    return this.enterKey;
+  }
+
+  spacePressed() {
+    return this.spaceKey;
   }
 
   // getHorizontal() {
