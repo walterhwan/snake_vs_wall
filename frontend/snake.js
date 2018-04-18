@@ -63,18 +63,18 @@ class Snake {
     ctx.font = "15px Arcade";
     ctx.fillStyle = 'white';
     ctx.textBaseline="middle";
-    ctx.textAlign="center";
+    ctx.textAlign="start";
     ctx.fillText(
       this.life,
-      this.x + 30,
+      this.x + 20,
       this.y + 20);
 
     if (this.life <= 5) {
-      ctx.fillStyle = 'green';
+      ctx.fillStyle = '#63AEE1';
     } else if (this.life <= 10) {
-      ctx.fillStyle = 'orange';
+      ctx.fillStyle = '#0A81D1';
     } else {
-      ctx.fillStyle = 'red';
+      ctx.fillStyle = '#0A34D1';
     }
     for (const idx of _.range(this.life)) {
       if (this.history[idx]) {

@@ -30,9 +30,9 @@ class Input {
         case this.ENTER:
           this.enterKey = true;
           break;
-        case this.SPACE:
-          this.spaceKey = true;
-          break;
+        // case this.SPACE:
+        //   this.spaceKey = true;
+        //   break;
         default:
           console.log(e.keyCode);
       }
@@ -58,7 +58,7 @@ class Input {
           this.enterKey = false;
           break;
         case this.SPACE:
-          this.spaceKey = false;
+          this.spaceKey = true;
           break;
         default:
           console.log(e.keyCode);
@@ -79,8 +79,12 @@ class Input {
     return this.enterKey;
   }
 
-  spacePressed() {
+  spaceReleased() {
     return this.spaceKey;
+  }
+
+  spaceReset() {
+    this.spaceKey = false;
   }
 
 }

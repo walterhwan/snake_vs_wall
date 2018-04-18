@@ -82,7 +82,7 @@ class Game {
 
     const blinkTextProps = {
       font: '14px Arcade',
-      fillStyle: 'grey',
+      fillStyle: '#314cb6',
       text: 'Press Enter to Start',
       x: this.canvasProps.width/2,
       y: this.canvasProps.height/2,
@@ -144,15 +144,32 @@ class Game {
     }
   }
 
+  setObjectsSpeed(gameSpeed) {
+    this.snake.speed = gameSpeed + 1;
+    this.walls.forEach(wall => {
+      wall.speed = gameSpeed;
+    });
+    this.walls.forEach(wall => {
+      wall.speed = gameSpeed;
+    });
+    this.foods.forEach(food => {
+      food.speed = gameSpeed;
+    });
+    this.dividers.forEach(divider => {
+      divider.speed = gameSpeed;
+    });
+  }
 
   update() {
     const width = this.canvasProps.width;
     const height = this.canvasProps.height;
     this.ctx.clearRect(0, 0, this.canvasProps.width, this.canvasProps.height);
 
-    if (this.input.spacePressed() && this.snake.life > 10 && this.speed > 2) {
+    if (this.input.spaceReleased() && this.snake.life > 10 && this.gameSpeed > 4) {
       this.gameSpeed -= 2;
       this.snake.life -= 10;
+      this.input.spaceReset();
+
     }
 
     if (this.input.enterPressed()) {
@@ -161,18 +178,16 @@ class Game {
     // Start Menu
     if (!this.gameStart) {
       this.ctx.font = "40px Arcade";
-      this.ctx.fillStyle = "grey";
       this.ctx.textAlign = "center";
+      this.ctx.fillStyle = "#26931f";
       this.ctx.fillText("Snake", width/2, 100);
+      this.ctx.fillStyle = "#6e6d6c";
       this.ctx.fillText("VS", width/2, 100 + 60);
+      this.ctx.fillStyle = "#BB3040";
       this.ctx.fillText("Wall", width/2, 100 + 120);
 
       this.startText.draw(this.ctx);
     } else {
-      // Snake
-      this.snake.move(this.dividers);
-      this.snake.draw(this.ctx);
-
       // Walls
       this.walls.forEach((wall) => {
         if (!wall.destroyed && Util.doesCollide(wall, this.snake)) {
@@ -202,6 +217,11 @@ class Game {
         divider.draw(this.ctx);
       });
 
+      // Snake
+      this.snake.move(this.dividers);
+      this.snake.draw(this.ctx);
+
+
       if (this.snake.life <= 0) {
         // alert('Game over');
         this.gameSpeed = 2;
@@ -210,11 +230,12 @@ class Game {
         this.setupSnake();
       } else if (this.walls[0].y > this.canvasProps.height) {
         this.setup();
-        if (this.gameSpeed > 6) {
+        if (this.gameSpeed > 6 && this.gameSpeed < 12) {
           this.gameSpeed += 0.5;
         } else {
           this.gameSpeed += 0.2;
         }
+        console.log(this.gameSpeed);
       }
     }
 

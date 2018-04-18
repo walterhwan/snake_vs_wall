@@ -24,17 +24,12 @@ class Food {
 
   draw(ctx) {
     if (this.destroyed) return null;
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = '#26931f';
     ctx.roundRect(this.x, this.y, this.width, this.height, this.width);
-    // ctx.beginPath();
-    // ctx.arc(this.x, this.y, this.size, 0, 2*Math.PI);
-    // ctx.fill();
 
     // life
     ctx.font = "10px Arcade";
     ctx.fillStyle = 'white';
-    // ctx.textBaseline="middle";
-    // ctx.textAlign="center";
     ctx.fillText(
       this.life,
       this.x + 11,

@@ -33,10 +33,20 @@ body {
     list-style-type: upper-latin;
   }
   li {
-    font-size: 12px
+    font-size: 12px;
+
+    span {
+      padding: 2px;
+      border: 2px solid black;
+      border-radius: 3px;
+    }
   }
-  .colored {
-    color: 'red';
+  li:nth-child(even) {
+    color: #DA784D;
+
+    > span {
+      border-color: #DA784D;
+    }
   }
 }
 
