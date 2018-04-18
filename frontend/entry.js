@@ -6,7 +6,6 @@ import Wall from './wall';
 import Food from './food';
 import Divider from './divider';
 import BlinkText from './blink_text';
-// import
 
 CanvasRenderingContext2D.prototype
 .roundRect = function (x, y, w, h, rad) {
@@ -58,8 +57,6 @@ class Game {
     this.setupSnake();
 
     this.setup();
-    // this.level = new Level(this.canvasProps);
-    // this.hud = new HUD(this.player);
 
     window.addEventListener("load", () => {
       this.update();

@@ -83,15 +83,6 @@ class Input {
     return this.spaceKey;
   }
 
-  // getHorizontal() {
-  //   let r = this.check(this.KEY_RT);
-  //   let l = this.check(this.KEY_LT);
-  //   return r && l ? 0 : r ? 1 : l ?  -1 : 0;
-  // }
-  //
-  // getVertical() {
-  //   return this.check(this.UP_ARROW) || this.check(this.SPACE);
-  // }
 }
 
 export default Input;
