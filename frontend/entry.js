@@ -27,6 +27,7 @@ class Game {
   constructor() {
     // Music
     this.audio = document.getElementById('audio1');
+    this.muted = false;
     document.getElementById('play-pause').onclick = () => {
       if (this.audio.paused) {
         this.audio.play();
@@ -39,11 +40,7 @@ class Game {
       this.audio.currentTime = 0;
     };
     document.getElementById('mute').onclick = () => {
-      if (this.audio.volume !== 0) {
-        this.audio.volume = 0;
-      } else {
-        this.audio.volume = 1;
-      }
+      this.muteOnClick();
     };
 
     // score board
@@ -239,7 +236,19 @@ class Game {
   }
 
   muteOnClick() {
-    
+    const muteImg = document.getElementById('mute_img');
+    if (this.muted) {
+      muteImg.src = "sound_icon.png";
+    } else {
+      muteImg.src = "mute_icon.png";
+    }
+    this.muted = !this.muted;
+
+    if (this.audio.volume !== 0) {
+      this.audio.volume = 0;
+    } else {
+      this.audio.volume = 1;
+    }
   }
 
   update() {
@@ -317,7 +326,7 @@ class Game {
         let name = prompt(`Game over! Your score is ${this.playerScore}\nPlease enter your name: `);
         if (name === null) {name = 'AAA';}
         Util.createScore({
-          name,
+          name: name.slice(6),
           value: this.playerScore
         }, (err, returnScore) => {
           this.scores.push(returnScore);
@@ -334,7 +343,7 @@ class Game {
       } else if (this.snake.life > 50 && this.difficulity < 3) {
         this.difficulity += 1;
         this.snake.life -= 25;
-        this.setObjectsSpeed(this.DEFAULT_SPEED);
+        this.setObjectsSpeed(this.DEFAULT_SPEED + this.difficulity + 1);
 
       } else if (this.walls[0].y > this.canvasProps.height) {
         this.setup();

@@ -86,25 +86,25 @@ canvas	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall
 CanvasRenderingContext2D	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^import BlinkText from '.\/blink_text';$/;"	class	line:8
 CanvasRenderingContext2D.roundRect	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^.roundRect = function (x, y, w, h, rad) {$/;"	method	line:11
 constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  constructor() {$/;"	function	line:27
-canvasProps.width	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    this.canvasProps = {$/;"	property	line:72
-canvasProps.height	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      width: 365,$/;"	property	line:73
-setupSnake	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  setupSnake() {$/;"	function	line:88
-setupSnake.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    const snakeProps = {$/;"	property	line:89
-setupSnake.y	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      x: 150,$/;"	property	line:90
-setupSnake.life	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      y: 500,$/;"	property	line:91
-setupSnake.length	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      life: 5,$/;"	property	line:92
-setupSnake.speed	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      length: 17,$/;"	property	line:93
-setup	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  setup() {$/;"	function	line:101
-const.font	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    const blinkTextProps = {$/;"	property	line:107
-const.fillStyle	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      font: '14px Arcade',$/;"	property	line:108
-const.text	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      fillStyle: '#314cb6',$/;"	property	line:109
-const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      text: 'Press Enter to Start',$/;"	property	line:110
-const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const wallProps = {$/;"	property	line:123
-const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const foodProps = {$/;"	property	line:141
-const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const dividerProps = {$/;"	property	line:159
-setObjectsSpeed	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  setObjectsSpeed(gameSpeed) {$/;"	function	line:172
-renderScoreBar	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreBar() {$/;"	function	line:189
-renderScoreBoard	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreBoard() {$/;"	function	line:215
-renderScoreItem	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreItem(score, idx) {$/;"	function	line:221
-muteOnClick	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  muteOnClick() {$/;"	function	line:241
-update	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  update() {$/;"	function	line:245
+canvasProps.width	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    this.canvasProps = {$/;"	property	line:69
+canvasProps.height	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      width: 365,$/;"	property	line:70
+setupSnake	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  setupSnake() {$/;"	function	line:85
+setupSnake.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    const snakeProps = {$/;"	property	line:86
+setupSnake.y	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      x: 150,$/;"	property	line:87
+setupSnake.life	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      y: 500,$/;"	property	line:88
+setupSnake.length	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      life: 5,$/;"	property	line:89
+setupSnake.speed	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      length: 17,$/;"	property	line:90
+setup	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  setup() {$/;"	function	line:98
+const.font	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^    const blinkTextProps = {$/;"	property	line:104
+const.fillStyle	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      font: '14px Arcade',$/;"	property	line:105
+const.text	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      fillStyle: '#314cb6',$/;"	property	line:106
+const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      text: 'Press Enter to Start',$/;"	property	line:107
+const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const wallProps = {$/;"	property	line:120
+const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const foodProps = {$/;"	property	line:138
+const.x	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^      const dividerProps = {$/;"	property	line:156
+setObjectsSpeed	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  setObjectsSpeed(gameSpeed) {$/;"	function	line:169
+renderScoreBar	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreBar() {$/;"	function	line:186
+renderScoreBoard	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreBoard() {$/;"	function	line:212
+renderScoreItem	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreItem(score, idx) {$/;"	function	line:218
+muteOnClick	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  muteOnClick() {$/;"	function	line:238
+update	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  update() {$/;"	function	line:254
