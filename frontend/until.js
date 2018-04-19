@@ -44,3 +44,28 @@ export const collide = (a, b) => {
   }
   return collDir;
 };
+
+export const getScores = (callBack) => {
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', 'api/scores');
+  xhr.onload = function() {
+    callBack(null, JSON.parse(xhr.responseText));
+  };
+  xhr.onerror = function() {
+    callBack(JSON.parse(xhr.responseText));
+  };
+  xhr.send();
+};
+
+export const createScore = (score, callBack) => {
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', 'api/scores');
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onload = function() {
+    callBack(null, JSON.parse(xhr.responseText));
+  };
+  // xhr.onerror = function() {
+  //   callBack(JSON.parse(xhr.responseText));
+  // };
+  xhr.send(JSON.stringify(score));
+};

@@ -38,6 +38,20 @@ class Game {
       this.audio.pause();
       this.audio.currentTime = 0;
     };
+    document.getElementById('mute').onclick = () => {
+      if (this.audio.volume !== 0) {
+        this.audio.volume = 0;
+      } else {
+        this.audio.volume = 1;
+      }
+    };
+
+    // score board
+    this.scores = [];
+    Util.getScores((err, datums) => {
+      if (err) console.log(err);
+      this.scores = Object.values(datums);
+    });
 
     // canvas
     this.canvas = document.getElementById("canvas");
@@ -52,7 +66,7 @@ class Game {
     this.difficulity = 0;
 
     // Game score
-    this.score = 0;
+    this.playerScore = 0;
 
     this.input = new Input(document);
     this.canvasProps = {
@@ -153,7 +167,6 @@ class Game {
         this.dividers.push(new Divider(dividerProps));
       }
     }
-    console.log(`dividers: ${this.dividers.length}`);
   }
 
   setObjectsSpeed(gameSpeed) {
@@ -185,7 +198,7 @@ class Game {
     this.ctx.fillStyle = "#BB3040";
     this.ctx.fillText("score", 10, 10);
     this.ctx.fillStyle = "#26931f";
-    this.ctx.fillText(this.score, 70, 10);
+    this.ctx.fillText(this.playerScore, 70, 10);
 
     this.ctx.closePath();
 
@@ -200,10 +213,32 @@ class Game {
   }
 
   renderScoreBoard() {
-
+    this.scores.forEach((score, idx) => {
+      this.renderScoreItem(score, idx);
+    });
   }
 
-  renderScoreItem() {
+  renderScoreItem(score, idx) {
+    this.ctx.font = "15px Arcade";
+    this.ctx.textAlign = "start";
+    if (idx === 0) {
+      this.ctx.fillStyle = "red";
+    } else {
+      this.ctx.fillStyle = "white";
+    }
+    this.ctx.fillText(score.name, 50, 350 + idx * 30);
+
+    this.ctx.font = "15px Arcade";
+    this.ctx.textAlign = "end";
+    if (idx === 0) {
+      this.ctx.fillStyle = "red";
+    } else {
+      this.ctx.fillStyle = "white";
+    }
+    this.ctx.fillText(score.value, 300, 350 + idx * 30);
+  }
+
+  muteOnClick() {
     
   }
 
@@ -214,7 +249,7 @@ class Game {
 
     // Decrease speed by space bar
     if (this.input.spaceReleased() && this.snake.life > 10 && this.gameSpeed > 50) {
-      this.score += 1000;
+      this.player += 1000;
       this.gameSpeed -= 30;
       this.snake.life -= 10;
       this.input.spaceReset();
@@ -236,6 +271,9 @@ class Game {
       this.ctx.fillText("Wall", width/2, 100 + 120);
 
       this.startText.draw(this.ctx);
+
+      this.renderScoreBoard();
+
     } else {
       // Walls
       this.walls.forEach((wall) => {
@@ -251,7 +289,7 @@ class Game {
       let oneFoodDestroyed = false;
       this.foods.forEach((food) => {
         if (!food.destroyed && Util.doesCollide(food, this.snake)) {
-          this.score += 100 * (1 + this.difficulity);
+          this.playerScore += 100 * (1 + this.difficulity);
           food.destroyed = true;
           oneFoodDestroyed = true;
           this.snake.life += food.life;
@@ -276,10 +314,20 @@ class Game {
 
 
       if (this.snake.life <= 0) {
-        // alert('Game over');
+        let name = prompt(`Game over! Your score is ${this.playerScore}\nPlease enter your name: `);
+        if (name === null) {name = 'AAA';}
+        Util.createScore({
+          name,
+          value: this.playerScore
+        }, (err, returnScore) => {
+          this.scores.push(returnScore);
+          this.scores = this.scores.sort((a, b) => {
+            return b.value - a.value;
+          }).slice(0, 5);
+        });
         this.setObjectsSpeed(this.DEFAULT_SPEED);
         this.difficulity = 0;
-        this.score = 0;
+        this.player = 0;
         this.gameStart = false;
         this.setup();
         this.setupSnake();
@@ -295,7 +343,6 @@ class Game {
         } else {
           this.setObjectsSpeed(this.gameSpeed + 2);
         }
-        console.log(this.gameSpeed);
       }
     }
 
