@@ -27,18 +27,21 @@ body {
   h1 {
     font-size: 24px;
     align-self: center;
+    color: #0066B7;
   }
 
   ol {
     list-style-type: upper-latin;
   }
   li {
+    color: #0066B7;
     font-size: 12px;
 
     span {
       padding: 2px;
       border: 2px solid black;
       border-radius: 3px;
+      border-color: #0066B7;
     }
   }
   li:nth-child(even) {

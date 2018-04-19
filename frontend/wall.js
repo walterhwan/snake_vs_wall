@@ -11,7 +11,7 @@ class Wall {
   }
 
   move() {
-    this.y += this.speed;
+    this.y += this.speed / 10;
   }
 
   draw(ctx) {

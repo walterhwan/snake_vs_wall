@@ -23,9 +23,9 @@ class Snake {
   move(dividers) {
     const input = this.input;
     if (input.rightPressed()) {
-      this.x += this.speed;
+      this.x += this.speed / 10;
     } else if (input.leftPressed()) {
-      this.x -= this.speed;
+      this.x -= this.speed / 10;
     }
     this.x = Util.clamp(this.x, 0, this.maxX - this.width);
 
@@ -69,20 +69,23 @@ class Snake {
       this.x + 20,
       this.y + 20);
 
+    let fileStyle = '';
     if (this.life <= 5) {
-      ctx.fillStyle = '#63AEE1';
+      fileStyle = '#63AEE1';
     } else if (this.life <= 10) {
-      ctx.fillStyle = '#0A81D1';
+      fileStyle = '#0A81D1';
     } else {
-      ctx.fillStyle = '#0A34D1';
+      fileStyle = '#0A34D1';
     }
+    // debugger;
     for (const idx of _.range(this.life)) {
       if (this.history[idx]) {
         const [x, y] = this.history[idx];
         const width = this.width;
+        ctx.fillStyle = fileStyle;
         ctx.roundRect(
           x, y + idx * (width + 3),
-          width, width, 3, this.life);
+          width, width, 3);
       }
     }
   }

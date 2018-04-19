@@ -12,7 +12,7 @@ CanvasRenderingContext2D.prototype
   if (w < 2 * rad) rad = w / 2;
   if (h < 2 * rad) rad = h / 2;
   this.beginPath();
-  this.moveTo(x+rad, y);
+  this.moveTo(x + rad, y);
   this.arcTo(x + w, y    , x + w, y + h, rad);
   this.arcTo(x + w, y + h, x,     y + h, rad);
   this.arcTo(x,     y + h, x,     y,     rad);
@@ -25,10 +25,8 @@ CanvasRenderingContext2D.prototype
 
 class Game {
   constructor() {
-    console.log("game loaded");
-
     // Music
-    this.audio = document.getElementById('audio2');
+    this.audio = document.getElementById('audio1');
     document.getElementById('play-pause').onclick = () => {
       if (this.audio.paused) {
         this.audio.play();
@@ -41,10 +39,20 @@ class Game {
       this.audio.currentTime = 0;
     };
 
+    // canvas
     this.canvas = document.getElementById("canvas");
     this.ctx = this.canvas.getContext('2d');
     this.gameStart = false;
-    this.gameSpeed = 2;
+
+    // Game Speed
+    this.DEFAULT_SPEED = 20;
+    this.gameSpeed = this.DEFAULT_SPEED;
+
+    // difficulity
+    this.difficulity = 0;
+
+    // Game score
+    this.score = 0;
 
     this.input = new Input(document);
     this.canvasProps = {
@@ -54,8 +62,8 @@ class Game {
     this.canvas.width = this.canvasProps.width;
     this.canvas.height = this.canvasProps.height;
 
-    this.setupSnake();
 
+    this.setupSnake();
     this.setup();
 
     window.addEventListener("load", () => {
@@ -69,7 +77,7 @@ class Game {
       y: 500,
       life: 5,
       length: 17,
-      speed: 3,
+      speed: this.gameSpeed + 10,
       maxX: this.canvasProps.width,
       input: this.input,
     };
@@ -77,9 +85,11 @@ class Game {
   }
 
   setup() {
+    // input
     this.input.rightKey = false;
     this.input.leftKey = false;
 
+    // blink text
     const blinkTextProps = {
       font: '14px Arcade',
       fillStyle: '#314cb6',
@@ -113,11 +123,12 @@ class Game {
     const size = 10;
     for (const idx of _.range(numFoods)) {
       const wallStrength = this.walls[idx].strength;
+      const life = wallStrength + Math.floor(Math.random() * 7 - 4) - this.difficulity;
       const foodProps = {
         x: 30 + idx * 60,
         y: foodsStartY,
         size,
-        life: Math.abs(wallStrength + Math.floor(Math.random() * 7 - 3)),
+        life: life < 0 ? 0 : life,
         speed: this.gameSpeed
       };
 
@@ -127,7 +138,7 @@ class Game {
     // divider
     const dividerStartY = startY + 60;
     this.dividers = [];
-    const numDividers = 6;
+    const numDividers = 5;
     const width = 5;
     const height = 200;
     for (const idx of _.range(numDividers)) {
@@ -142,10 +153,12 @@ class Game {
         this.dividers.push(new Divider(dividerProps));
       }
     }
+    console.log(`dividers: ${this.dividers.length}`);
   }
 
   setObjectsSpeed(gameSpeed) {
-    this.snake.speed = gameSpeed + 1;
+    this.gameSpeed = gameSpeed;
+    this.snake.speed = gameSpeed + 10;
     this.walls.forEach(wall => {
       wall.speed = gameSpeed;
     });
@@ -160,16 +173,52 @@ class Game {
     });
   }
 
+  renderScoreBar() {
+    // score
+    this.ctx.beginPath();
+
+    this.ctx.rect(0, 0, this.canvasProps.width, 20);
+    this.ctx.fillStyle = "black";
+    this.ctx.fill();
+    this.ctx.font = "10px Arcade";
+    this.ctx.textAlign = "start";
+    this.ctx.fillStyle = "#BB3040";
+    this.ctx.fillText("score", 10, 10);
+    this.ctx.fillStyle = "#26931f";
+    this.ctx.fillText(this.score, 70, 10);
+
+    this.ctx.closePath();
+
+    // difficulity
+    const diffText = ['normal', 'hard', 'expert', 'legendary'];
+    this.ctx.font = "10px Arcade";
+    this.ctx.textAlign = "end";
+    // this.ctx.fillStyle = "#BB3040";
+    // this.ctx.fillText("difficulity", 180, 10);
+    this.ctx.fillStyle = "#26931f";
+    this.ctx.fillText(diffText[this.difficulity], 350, 10);
+  }
+
+  renderScoreBoard() {
+
+  }
+
+  renderScoreItem() {
+    
+  }
+
   update() {
     const width = this.canvasProps.width;
     const height = this.canvasProps.height;
     this.ctx.clearRect(0, 0, this.canvasProps.width, this.canvasProps.height);
 
-    if (this.input.spaceReleased() && this.snake.life > 10 && this.gameSpeed > 4) {
-      this.gameSpeed -= 2;
+    // Decrease speed by space bar
+    if (this.input.spaceReleased() && this.snake.life > 10 && this.gameSpeed > 50) {
+      this.score += 1000;
+      this.gameSpeed -= 30;
       this.snake.life -= 10;
       this.input.spaceReset();
-
+      this.setObjectsSpeed(this.gameSpeed);
     }
 
     if (this.input.enterPressed()) {
@@ -202,6 +251,7 @@ class Game {
       let oneFoodDestroyed = false;
       this.foods.forEach((food) => {
         if (!food.destroyed && Util.doesCollide(food, this.snake)) {
+          this.score += 100 * (1 + this.difficulity);
           food.destroyed = true;
           oneFoodDestroyed = true;
           this.snake.life += food.life;
@@ -212,10 +262,13 @@ class Game {
       if (oneFoodDestroyed) {this.foods = [];}
 
       // Dividers
-      this.dividers.forEach(divider => {
+      for (let i = 0; i < this.dividers.length; i++) {
+        const divider = this.dividers[i];
         divider.move();
         divider.draw(this.ctx);
-      });
+      }
+
+      this.renderScoreBar();
 
       // Snake
       this.snake.move(this.dividers);
@@ -224,16 +277,23 @@ class Game {
 
       if (this.snake.life <= 0) {
         // alert('Game over');
-        this.gameSpeed = 2;
+        this.setObjectsSpeed(this.DEFAULT_SPEED);
+        this.difficulity = 0;
+        this.score = 0;
         this.gameStart = false;
         this.setup();
         this.setupSnake();
+      } else if (this.snake.life > 50 && this.difficulity < 3) {
+        this.difficulity += 1;
+        this.snake.life -= 25;
+        this.setObjectsSpeed(this.DEFAULT_SPEED);
+
       } else if (this.walls[0].y > this.canvasProps.height) {
         this.setup();
-        if (this.gameSpeed > 6 && this.gameSpeed < 12) {
-          this.gameSpeed += 0.5;
+        if (this.gameSpeed > 60 && this.gameSpeed < 110) {
+          this.setObjectsSpeed(this.gameSpeed + 5);
         } else {
-          this.gameSpeed += 0.2;
+          this.setObjectsSpeed(this.gameSpeed + 2);
         }
         console.log(this.gameSpeed);
       }
