@@ -326,7 +326,7 @@ class Game {
         let name = prompt(`Game over! Your score is ${this.playerScore}\nPlease enter your name: `);
         if (name === null) {name = 'AAA';}
         Util.createScore({
-          name: name.slice(6),
+          name: name.slice(0, 6),
           value: this.playerScore
         }, (err, returnScore) => {
           this.scores.push(returnScore);
