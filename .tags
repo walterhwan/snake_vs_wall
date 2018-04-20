@@ -108,3 +108,29 @@ renderScoreBoard	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/sna
 renderScoreItem	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreItem(score, idx) {$/;"	function	line:218
 muteOnClick	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  muteOnClick() {$/;"	function	line:238
 update	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  update() {$/;"	function	line:254
+name	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "name": "snake_vs_wall",$/;"	function	line:2
+private	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "private": true,$/;"	function	line:3
+dependencies	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "dependencies": {$/;"	function	line:4
+babel-core	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "babel-core": "^6.26.0",$/;"	function	line:5
+babel-loader	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "babel-loader": "^7.1.4",$/;"	function	line:6
+babel-preset-env	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "babel-preset-env": "^1.6.1",$/;"	function	line:7
+babel-preset-react	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "babel-preset-react": "^6.24.1",$/;"	function	line:8
+lodash	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "lodash": "^4.17.5",$/;"	function	line:9
+webpack	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "webpack": "^3.4.1"$/;"	function	line:10
+description	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "description": "",$/;"	function	line:12
+version	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "version": "1.0.0",$/;"	function	line:13
+main	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "main": "index.js",$/;"	function	line:14
+directories	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "directories": {$/;"	function	line:15
+lib	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "lib": "lib",$/;"	function	line:16
+test	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "test": "test"$/;"	function	line:17
+devDependencies	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "devDependencies": {},$/;"	function	line:19
+engines	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "engines": {$/;"	function	line:20
+node	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "node": "4.1.1",$/;"	function	line:21
+npm	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "npm": "2.1.x"$/;"	function	line:22
+scripts	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "scripts": {$/;"	function	line:24
+postinstall	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "postinstall": "webpack",$/;"	function	line:25
+test	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1",$/;"	function	line:26
+webpack	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^    "webpack": "webpack --watch"$/;"	function	line:27
+keywords	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "keywords": [],$/;"	function	line:29
+author	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "author": "Walter",$/;"	function	line:30
+license	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/package.json	/^  "license": "ISC"$/;"	function	line:31
