@@ -210,6 +210,9 @@ class Game {
   }
 
   renderScoreBoard() {
+    this.scores = this.scores.sort((a, b) => {
+      return b.value - a.value;
+    }).slice(0, 5);
     this.scores.forEach((score, idx) => {
       this.renderScoreItem(score, idx);
     });
@@ -330,9 +333,6 @@ class Game {
           value: this.playerScore
         }, (err, returnScore) => {
           this.scores.push(returnScore);
-          this.scores = this.scores.sort((a, b) => {
-            return b.value - a.value;
-          }).slice(0, 5);
         });
         this.setObjectsSpeed(this.DEFAULT_SPEED);
         this.difficulity = 0;
