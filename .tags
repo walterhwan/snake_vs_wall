@@ -36,3 +36,8 @@ renderScoreBoard	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/sna
 renderScoreItem	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  renderScoreItem(score, idx) {$/;"	function	line:221
 muteOnClick	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  muteOnClick() {$/;"	function	line:241
 update	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  update() {$/;"	function	line:257
+Snake VS Wall - An vertical scrolling game	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/README.md	/^## Snake VS Wall - An vertical scrolling game$/;"	function	line:4
+Features	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/README.md	/^## Features$/;"	function	line:8
+Gameplay	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/README.md	/^## Gameplay$/;"	function	line:17
+Architecture and Technologies	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/README.md	/^## Architecture and Technologies$/;"	function	line:26
+improvements	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/README.md	/^## improvements$/;"	function	line:31
