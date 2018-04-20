@@ -30,18 +30,18 @@ Architecture and Technologies	/Users/walter/Documents/Programing/Ruby Projects/A
 Future Improvements	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/README.md	/^## Future Improvements$/;"	function	line:31
 @font-face	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^@font-face {$/;"	function	line:5
 body	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^body {$/;"	function	line:10
-.left-section	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.left-section {$/;"	function	line:17
-.right-section	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.right-section {$/;"	function	line:21
-.instructions	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  .instructions {$/;"	function	line:27
-h1	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    h1 {$/;"	function	line:35
-ol	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    ol {$/;"	function	line:41
-li	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    li {$/;"	function	line:44
-span	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^      span {$/;"	function	line:48
-li:nth-child(even)	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    li:nth-child(even) {$/;"	function	line:55
-> span	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^      > span {$/;"	function	line:58
-.audio-control	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.audio-control {$/;"	function	line:65
-button	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^button  {$/;"	function	line:70
-canvas	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^canvas {$/;"	function	line:77
-.reference	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.reference {$/;"	function	line:81
-.linkedin-button, .github-button	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  .linkedin-button, .github-button {$/;"	function	line:86
-img	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    img {$/;"	function	line:90
+.left-section	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.left-section {$/;"	function	line:24
+.right-section	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.right-section {$/;"	function	line:28
+.instructions	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  .instructions {$/;"	function	line:34
+h1	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    h1 {$/;"	function	line:42
+ol	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    ol {$/;"	function	line:48
+li	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    li {$/;"	function	line:51
+span	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^      span {$/;"	function	line:55
+li:nth-child(even)	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    li:nth-child(even) {$/;"	function	line:62
+> span	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^      > span {$/;"	function	line:65
+.audio-control	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.audio-control {$/;"	function	line:72
+button	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^button  {$/;"	function	line:77
+canvas	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^canvas {$/;"	function	line:84
+.reference	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.reference {$/;"	function	line:90
+.linkedin-button, .github-button	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  .linkedin-button, .github-button {$/;"	function	line:95
+img	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    img {$/;"	function	line:99

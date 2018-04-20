@@ -10,8 +10,15 @@
 body {
   font-family: "Arcade", Verdana, Tahoma;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  background: black;
+  background-image: url(/arcade_background.jpg);
+  // background: no-repeat center center cover;
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .left-section {
@@ -76,6 +83,8 @@ button  {
 
 canvas {
   background: black;
+  border-radius: 10px;
+  border: 2px solid blue;
 }
 
 .reference {
