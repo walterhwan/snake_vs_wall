@@ -1,3 +1,16 @@
+@font-face	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^@font-face {$/;"	function	line:5
+body	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^body {$/;"	function	line:10
+.left-section	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.left-section {$/;"	function	line:17
+.right-section	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.right-section {$/;"	function	line:21
+h1	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  h1 {$/;"	function	line:29
+ol	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  ol {$/;"	function	line:35
+li	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  li {$/;"	function	line:38
+span	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    span {$/;"	function	line:42
+li:nth-child(even)	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^  li:nth-child(even) {$/;"	function	line:49
+> span	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^    > span {$/;"	function	line:52
+.audio-control	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^.audio-control {$/;"	function	line:58
+button	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^button  {$/;"	function	line:63
+canvas	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/app/assets/stylesheets/static_pages.scss	/^canvas {$/;"	function	line:70
 CanvasRenderingContext2D	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^import BlinkText from '.\/blink_text';$/;"	class	line:8
 CanvasRenderingContext2D.roundRect	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^.roundRect = function (x, y, w, h, rad) {$/;"	method	line:11
 constructor	/Users/walter/Documents/Programing/Ruby Projects/AppAcademy/snake_vs_wall/frontend/entry.js	/^  constructor() {$/;"	function	line:27

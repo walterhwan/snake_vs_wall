@@ -260,11 +260,12 @@ class Game {
     this.ctx.clearRect(0, 0, this.canvasProps.width, this.canvasProps.height);
 
     // Decrease speed by space bar
-    if (this.input.spaceReleased() && this.snake.life > 10 && this.gameSpeed > 50) {
-      this.player += 1000;
+    if (this.input.spaceReleased() && this.snake.life > 50 && this.gameSpeed > 50) {
+      this.playerScore += 1000;
       this.gameSpeed -= 30;
-      this.snake.life -= 10;
+      this.snake.life -= 50;
       this.input.spaceReset();
+      this.difficulity += 1;
       this.setObjectsSpeed(this.gameSpeed);
     }
 
@@ -336,15 +337,15 @@ class Game {
         });
         this.setObjectsSpeed(this.DEFAULT_SPEED);
         this.difficulity = 0;
-        this.player = 0;
+        this.playerScore = 0;
         this.gameStart = false;
         this.setup();
         this.setupSnake();
-      } else if (this.snake.life > 50 && this.difficulity < 3) {
+      } else if (this.snake.life > 100 && this.difficulity < 3) {
         this.difficulity += 1;
-        this.snake.life -= 25;
+        this.playerScore += 1000;
         this.setObjectsSpeed(this.DEFAULT_SPEED + this.difficulity + 1);
-
+        this.snake.life -= 50;
       } else if (this.walls[0].y > this.canvasProps.height) {
         this.setup();
         if (this.gameSpeed > 60 && this.gameSpeed < 110) {
