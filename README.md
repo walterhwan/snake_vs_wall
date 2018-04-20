@@ -28,7 +28,7 @@ The game is run under a single page app with a simulation canvas on the left and
 + Vanilla Javascript
 + HTML5 Canvas
 
-## improvements
+## Future Improvements
 
  - [ ] Other music selection and control buttons with hover effect
  - [ ] Better gameplay
