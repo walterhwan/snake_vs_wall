@@ -34,7 +34,7 @@ class Input {
         //   this.spaceKey = true;
         //   break;
         default:
-          console.log(e.keyCode);
+          // console.log(e.keyCode);
       }
     });
 
@@ -61,7 +61,7 @@ class Input {
           this.spaceKey = true;
           break;
         default:
-          console.log(e.keyCode);
+          // console.log(e.keyCode);
       }
     });
   }
