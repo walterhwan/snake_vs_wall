@@ -27,6 +27,7 @@ The game is run under a single page app with a simulation canvas on the left and
 
 + Vanilla Javascript
 + HTML5 Canvas
++ Ruby on Rails
 
 ## Future Improvements
 
