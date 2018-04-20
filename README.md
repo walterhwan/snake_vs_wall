@@ -5,6 +5,9 @@
 
 This game is simple. Your goal is to eat stuff, getting bigger, breaking through touch walls, and survive!
 
+![snake-gameplay](https://i.imgur.com/QiKSAUQ.png)
+
+
 ## Features
 
 + Move snake using keyboard (`A D` or `← →`)
